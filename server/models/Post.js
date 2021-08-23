@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
-  desc: {
+  title: {
+    type: String,
+    max: 30,
+  },
+  body: {
     type: String,
     max: 500,
   },
