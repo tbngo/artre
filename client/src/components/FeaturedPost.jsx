@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
+    marginTop: "5px",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -45,11 +46,11 @@ const FeaturedPost = (props) => {
     >
       <div className={classes.overlay} />
       <Grid container>
-        <Grid item md={6}>
+        <Grid item md={5}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography
               component="h1"
-              variant="h3"
+              variant="h2"
               color="inherit"
               gutterBottom
             >
@@ -58,9 +59,9 @@ const FeaturedPost = (props) => {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Button variant="outlined" href="#">
               {post.linkText}
-            </Link>
+            </Button>
           </div>
         </Grid>
       </Grid>

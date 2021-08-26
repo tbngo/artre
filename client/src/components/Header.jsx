@@ -25,14 +25,13 @@ const Header = () => {
             Discover
           </Button>
           <Typography
-            component="h2"
-            variant="h5"
+            variant="h6"
             color="inherit"
             align="center"
             noWrap
             className={classes.toolbarTitle}
           >
-            Conceptu
+            ARTRE
           </Typography>
           <Button variant="text" size="small">
             Sign up
