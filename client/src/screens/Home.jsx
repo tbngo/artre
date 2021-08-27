@@ -2,6 +2,7 @@ import React from "react";
 import { Container, CssBaseline, Grid } from "@material-ui/core";
 import Header from "../components/Header";
 import FeaturedPost from "../components/FeaturedPost";
+import Footer from "../components/Footer";
 
 const mainFeaturedPost = {
   title: "The struggling artist is no more",
@@ -21,6 +22,7 @@ const Home = () => {
         <Header />
       </Container>
       <FeaturedPost post={mainFeaturedPost} />
+      <Footer />
     </React.Fragment>
   );
 };
