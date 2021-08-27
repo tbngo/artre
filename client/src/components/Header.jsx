@@ -4,13 +4,17 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    justifyContent: "space-between",
   },
   toolbarTitle: {
-    flexGrow: 1,
+    align: "center",
+    color: "inherit",
+    textDecoration: "none",
   },
 }));
 
@@ -25,10 +29,8 @@ const Header = () => {
             Discover
           </Button>
           <Typography
-            variant="h6"
-            color="inherit"
-            align="center"
-            noWrap
+            component={Link}
+            to={"/"}
             className={classes.toolbarTitle}
           >
             ARTRE
