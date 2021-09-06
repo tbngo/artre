@@ -7,8 +7,10 @@ const grant = require("grant").express();
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
+// Grant, Twitter Auth
+// @todo implement store in Mongo
 app
   .use(session({ secret: "grant", saveUninitialized: true, resave: false }))
   .use("/connect/twitter", (req, res, next) => {
