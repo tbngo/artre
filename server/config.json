@@ -1,0 +1,9 @@
+{
+  "defaults": {
+    "origin": "http://localhost:3000",
+    "transport": "session"
+  },
+  "twitter": {
+    "callback": "/hi"
+  }
+}
