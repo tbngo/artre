@@ -8,3 +8,11 @@ $ cd server && npm install
 $ cd client && npm install
 ```
 
+## Getting Started
+
+You can start the server in the server directory using
+```
+$ npm run start
+```
+
+The client can be started similarly in the client directory.
