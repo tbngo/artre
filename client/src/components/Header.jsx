@@ -11,17 +11,17 @@ const Header = () => {
       <div className="z-10">
         <div>
           <h1 className="font-black text-6xl py-5">
-            a reverse-crowdfunding platform made by artists, for artists.
+            A reverse-crowdfunding platform made for artists.
           </h1>
         </div>
         <div>
           <p className="py-5 text-xl max-w-4xl text-gray-400">
-            come up with ideas that you think your favorite artists would want
+            Come up with ideas that you think your favorite artists would want
             to make, raise funds for it, and we'll take it from there.
           </p>
         </div>
         <div className="py-5">
-          <Button href="/about" text="read about our mission" />
+          <Button href="/about" text="Read about our mission" />
         </div>
       </div>
     </div>
