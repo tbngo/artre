@@ -1,4 +1,4 @@
-import Button from "./Button";
+import LoginDialog from "./LoginDialog";
 
 const Navbar = () => {
   return (
@@ -8,9 +8,7 @@ const Navbar = () => {
           <a href="/" className="font-extrabold text-xl px-4">
             🎨 artre
           </a>
-          <div className="px-4">
-            <Button href="/" text="log in 🔐" />
-          </div>
+          <LoginDialog />
         </div>
       </div>
     </nav>
