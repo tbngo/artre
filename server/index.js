@@ -36,6 +36,8 @@ mongoose.connect(process.env.MONGO_URL, {
 app.use(express.json());
 app.use(morgan("common"));
 
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}...`);
 });
