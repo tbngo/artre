@@ -38,6 +38,22 @@ app
     res.end(JSON.stringify(req.session.grant.response, null, 2));
   });
 
+<<<<<<< HEAD
+=======
+dotenv.config();
+/*
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+*/
+
+app.use(express.json());
+app.use(morgan("common"));
+
+const PORT = process.env.PORT || 5000;
+
+>>>>>>> 687edeb79a97b7657a008a254749aa9e02560e3c
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}...`);
 });
