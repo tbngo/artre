@@ -17,7 +17,7 @@ $ npm run start
 
 The client can be started similarly in the client directory.
 
-In order to get the Twitter authentication working, you must create a developer [Twitter account and project](developer.twitter.com/) to receive your own API keys. Then, create a .env file in the server directory with the following variables from Twitter:
+In order to get the Twitter authentication working, you must create a developer [Twitter account and project](https://developer.twitter.com/) to receive your own API keys. Then, create a .env file in the server directory with the following variables from Twitter:
 ```
 TWITTER_CONSUMER_KEY="..."
 TWITTER_CONSUMER_SECRET="..."
