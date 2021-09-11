@@ -22,3 +22,8 @@ In order to get the Twitter authentication working, you must create a developer 
 TWITTER_CONSUMER_KEY="..."
 TWITTER_CONSUMER_SECRET="..."
 ```
+
+To get the database working, create an env variable "MONGO_URL" with your connection string from MongoDB:
+```
+MONGO_URL="..."
+```
