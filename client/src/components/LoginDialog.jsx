@@ -68,7 +68,7 @@ const LoginDialog = () => {
                   <a
                     className="inline-flex whitespace-nowrap justify-center px-32 py-2 text-md font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                     onClick={closeModal}
-                    href="/connect/twitter"
+                    href="/auth/twitter"
                   >
                     Log in with Twitter
                   </a>
