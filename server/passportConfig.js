@@ -16,7 +16,7 @@ module.exports = (passport) => {
         includeEmail: true,
       },
       (req, token, tokenSecret, profile, done) => {
-        const { id, email, username } = profile;
+        const { id, emails, username } = profile;
         User.findOne({ user_id: id }, async (err, user) => {
           if (err) throw err;
           if (user) {
@@ -26,7 +26,7 @@ module.exports = (passport) => {
             // User does not exist in database yet
             const newUser = new User({
               user_id: id,
-              email: email,
+              email: emails[0].value,
               screen_name: username,
             });
             await newUser.save();
