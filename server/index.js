@@ -59,6 +59,7 @@ app.get(
   }
 );
 
+// Get current user authenticated; req.user comes from Passport after authenticating.
 app.get("/user", (req, res) => {
   res.send(req.user);
 });
