@@ -55,13 +55,11 @@ app.get(
     session: true,
   }),
   (req, res) => {
-    console.log(req.user);
     return res.redirect("http://localhost:3000/");
   }
 );
 
 app.get("/user", (req, res) => {
-  console.log(req.user);
   res.send(req.user);
 });
 

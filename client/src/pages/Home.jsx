@@ -12,7 +12,6 @@ const Home = () => {
       url: "http://localhost:5000/user",
     }).then((res) => {
       setUserData(res.data);
-      console.log(res.data);
     });
   };
   return (
