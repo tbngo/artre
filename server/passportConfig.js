@@ -42,7 +42,7 @@ module.exports = (passport) => {
   });
 
   passport.deserializeUser((id, cb) => {
-    User.findOne({ user_id: id }, (err, user) => {
+    User.findOne({ _id: id }, (err, user) => {
       cb(err, user);
     });
   });

@@ -1,26 +1,27 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const TwitterStrategy = require("passport-twitter").Strategy;
 const cors = require("cors");
-
 const User = require("./models/User");
-process.env.NODE_ENV = "dev";
-
 const app = express();
+
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const PORT = process.env.PORT || 5000;
 
-dotenv.config();
+// MIDDLEWARE
 app.use(express.json());
-
 app.use(
   cors({
-    origin: process.env.NODE_ENV === "dev" ? "*" : process.env.FRONTEND_HOST,
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -32,11 +33,11 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(cookieParser());
-
+app.use(cookieParser(process.env.SECRET_KEY));
 app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
+//-------------END OF MIDDLEWARE--------------
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
 // will redirect the user back to the application at
@@ -54,13 +55,14 @@ app.get(
     session: true,
   }),
   (req, res) => {
+    console.log(req.user);
     return res.redirect("http://localhost:3000/");
   }
 );
 
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+app.get("/user", (req, res) => {
+  console.log(req.user);
+  res.send(req.user);
 });
 
 app.listen(PORT, () => {
