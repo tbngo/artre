@@ -1,18 +1,17 @@
 import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const LoginDialog = () => {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
 
   return (
     <>
