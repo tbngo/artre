@@ -1,24 +1,32 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import Button from "./Button";
 
 const LoginDialog = () => {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
+
+  const user = useContext(UserContext);
 
   return (
     <>
       <div className="">
         <div className="px-4">
-          <Button onClick={openModal} text="Login 🔐" />
+          {user ? (
+            <h2 className="text-lg font-bold text-blue-500">
+              @{user.screen_name}
+            </h2>
+          ) : (
+            <Button onClick={openModal} text="Login 🔐" />
+          )}
         </div>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
