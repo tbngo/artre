@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { UserContext } from "./contexts/UserContext";
 import axios from "axios";
 import Home from "./pages/Home";
 
@@ -13,6 +14,7 @@ const App = () => {
       .then((res) => {
         if (res.data && loggedIn === false) {
           setLoggedIn(true);
+          console.log(res.data);
           setUser(res.data);
         }
       })
@@ -27,9 +29,11 @@ const App = () => {
 
   return (
     <Router>
-      <Route path="/">
-        <Home />
-      </Route>
+      <UserContext.Provider value={user}>
+        <Route path="/">
+          <Home />
+        </Route>
+      </UserContext.Provider>
     </Router>
   );
 };

@@ -1,5 +1,6 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { UserContext } from "../contexts/UserContext";
 import Button from "./Button";
 
 const LoginDialog = () => {
@@ -13,11 +14,19 @@ const LoginDialog = () => {
     setIsOpen(true);
   };
 
+  const user = useContext(UserContext);
+
   return (
     <>
       <div className="">
         <div className="px-4">
-          <Button onClick={openModal} text="Login 🔐" />
+          {user ? (
+            <h2 className="text-lg font-bold text-blue-500">
+              @{user.screen_name}
+            </h2>
+          ) : (
+            <Button onClick={openModal} text="Login 🔐" />
+          )}
         </div>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
